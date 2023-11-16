@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="stylesheet" href="/css/estilo.css">
+	<title>Principal</title>
+</head>
+<body>
+
+<header>
+    <div th:fragment="cabecera">
+        <div class="pos-f-t">
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                <div class="navbar-header">
+                    <div class="navbar-header">
+                        <a href="/principal"><i class="fa-solid fa-house" style="color: white; margin: 12px;"></i></a>
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse">
+                   <ul class="navbar-nav">
+						<li class="nav-item active" th:each="bean:${session.ENLACES}">
+							<a class="nav-link" th:text="${bean.descripcion}" th:href="${bean.ruta}"></a>
+						</li>
+                    </ul>
+
+                    <ul class="navbar-nav" style="position: absolute; right: 15px;">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                                aria-expanded="false" style="text-decoration: none; color: white;">User</a>
+                            <ul class="dropdown-menu" style="border-radius: 15px; position: absolute; left: -85px;">
+                                <div>
+                                    <i class="fa-solid fa-user"
+                                        style="font-size: 65px; position: relative; left: 30%;padding: 5px;"></i><br>
+                                   <label style="font-size: 13px;font-family: Courier;padding: 4px;">Usuario:</label>
+                                   <label style="font-size: 13px;font-family: Courier;padding: 4px;" th:text="${USUARIO.rol.descripcion}">
+                                    </label><br>
+                                   <label style="font-size: 13px;font-family: Courier;padding: 8px;">Nombre:</label>
+                                   <label style="font-size: 13px;font-family: Courier;padding: 8px;" th:text="${USUARIO.nombre}">
+                                    </label><br>
+                                    <a href="/login?logout"
+                                        style="font-size: 12px;font-family: courier;text-decoration: none;display: flex;justify-content: center;align-items: center;">Cerrar
+                                        Sesión</a>
+                                </div>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<!-- Cuerpo  -->
+
+	<!-- 1mer div parte arriba -->
+	<div class="d-flex" style="display: flex; justify-content: center; align-items: center;">
+		<!-- bloque 1-->
+		<div class="card"
+			style="width: 15rem;border-radius: 10px; margin-left: 20px; padding-top: 10px;margin-top: 20px;">
+			<svg xmlns="http://www.w3.org/2000/svg" height="5em"
+				viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+				<path
+					d="M320 464c8.8 0 16-7.2 16-16V160H256c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320zM0 64C0 28.7 28.7 0 64 0H229.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64z" />
+			</svg>
+			<div class="card-body">
+				<h5 class="card-title" style="font-size: 15px;">Requerimientos</h5>
+				<p class="card-text" style="font-size: 13px;">Esta es la Parte de Registro Requerimiento</p>
+				<a href="#" class="btn btn-primary" style="font-size: 15px;">Ver Info</a>
+			</div>
+		</div>
+
+		<!-- bloque 2 -->
+		<div class="card"
+			style="width: 15rem;border-radius: 10px; margin-left: 20px; padding-top: 10px;margin-top: 20px;">
+			<svg xmlns="http://www.w3.org/2000/svg" height="5em"
+				viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+				<path
+					d="M320 464c8.8 0 16-7.2 16-16V160H256c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320zM0 64C0 28.7 28.7 0 64 0H229.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64z" />
+			</svg>
+			<div class="card-body">
+				<h5 class="card-title" style="font-size: 15px;">Expediente</h5>
+				<p class="card-text" style="font-size: 13px;">Esta es la Parte de Registro Expediente</p>
+				<a href="#" class="btn btn-success" style="font-size: 15px;">Ver Info</a>
+			</div>
+		</div>
+
+		<!-- bloque 3 -->
+		<div class="card"
+			style="width: 15rem;border-radius: 10px; margin-left: 20px; padding-top: 10px;margin-top: 20px;">
+			<svg xmlns="http://www.w3.org/2000/svg" height="5em"
+				viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+				<path
+					d="M320 464c8.8 0 16-7.2 16-16V160H256c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320zM0 64C0 28.7 28.7 0 64 0H229.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64z" />
+			</svg>
+			<div class="card-body">
+				<h5 class="card-title" style="font-size: 15px;">CCP</h5>
+				<p class="card-text" style="font-size: 13px;">Esta es la Parte de Registro Requerimiento</p>
+				<a href="#" class="btn btn-warning" style="font-size: 15px;">Ver Info</a>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- 2 div parte abajo-->
+
+	<div class="d-flex p-2" style="display: flex; justify-content: center; align-items: center;">
+		<!-- bloque 1-->
+		<div class="card"
+			style="width: 15rem;border-radius: 10px; margin-left: 20px; padding-top: 10px;margin-top: 20px;">
+			<svg xmlns="http://www.w3.org/2000/svg" height="5em"
+				viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+				<path
+					d="M320 464c8.8 0 16-7.2 16-16V160H256c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320zM0 64C0 28.7 28.7 0 64 0H229.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64z" />
+			</svg>
+			<div class="card-body">
+				<h5 class="card-title" style="font-size: 15px;">AMC</h5>
+				<p class="card-text" style="font-size: 13px;">Esta es la Parte de Registro Requerimiento</p>
+				<a href="#" class="btn btn-success" style="font-size: 15px;">Ver Info</a>
+			</div>
+		</div>
+
+		<!-- bloque 2 -->
+		<div class="card"
+			style="width: 15rem;border-radius: 10px; margin-left: 20px; padding-top: 10px;margin-top: 20px;">
+			<svg xmlns="http://www.w3.org/2000/svg" height="5em"
+				viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+				<path
+					d="M320 464c8.8 0 16-7.2 16-16V160H256c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320zM0 64C0 28.7 28.7 0 64 0H229.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64z" />
+			</svg>
+			<div class="card-body">
+				<h5 class="card-title" style="font-size: 15px;">AMD</h5>
+				<p class="card-text" style="font-size: 13px;">Esta es la Parte de Registro Requerimiento</p>
+				<a href="#" class="btn btn-danger" style="font-size: 15px;">Ver Info</a>
+			</div>
+		</div>
+
+		<!-- bloque 3 -->
+		<div class="card"
+			style="width: 15rem;border-radius: 10px; margin-left: 20px; padding-top: 10px;margin-top: 20px;">
+			<svg xmlns="http://www.w3.org/2000/svg" height="5em"
+				viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+				<path
+					d="M320 464c8.8 0 16-7.2 16-16V160H256c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320zM0 64C0 28.7 28.7 0 64 0H229.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64z" />
+			</svg>
+			<div class="card-body">
+				<h5 class="card-title" style="font-size: 15px;">Informe</h5>
+				<p class="card-text" style="font-size: 13px;">Esta es la Parte de Registro Requerimiento</p>
+				<a href="#" class="btn btn-primary" style="font-size: 15px;">Ver Info</a>
+			</div>
+		</div>
+	</div>
+	
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+		crossorigin="anonymous"></script>
+</body>
+</html>

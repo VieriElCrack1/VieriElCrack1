@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="requerimiento_reporte" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b7501f48-c589-4694-9939-22af6309943e">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL Connection"/>
+	<queryString language="SQL">
+		<![CDATA[select r.idrequerimiento,
+r.nomrequerimiento,
+r.descripcion,
+u.nombre as "usu.nombre"
+ from proyectolp2.tb_requerimiento r 
+join  proyectolp2.tb_usuario u 
+on  
+u.idusuario = r.idusuario]]>
+	</queryString>
+	<field name="idrequerimiento" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="idrequerimiento"/>
+		<property name="com.jaspersoft.studio.field.label" value="idrequerimiento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_requerimiento"/>
+	</field>
+	<field name="nomrequerimiento" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nomrequerimiento"/>
+		<property name="com.jaspersoft.studio.field.label" value="nomrequerimiento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_requerimiento"/>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="descripcion"/>
+		<property name="com.jaspersoft.studio.field.label" value="descripcion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_requerimiento"/>
+	</field>
+	<field name="usu.nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="usu.nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tb_usuario"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="95" y="25" width="205" height="15" uuid="b08635d0-cc33-472d-ac81-6c89a31fb01d"/>
+				<text><![CDATA[Logistica]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="0" width="210" height="25" uuid="eb8ab74b-d790-442f-b2ba-851d31aa2706">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ministerio Publico]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="55" width="205" height="15" uuid="14175cde-08d7-4c43-9896-45f6b66e4401"/>
+				<text><![CDATA[Direccion: Av. Abancay Nro. 491]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="40" width="205" height="15" uuid="d75d459b-e51a-434e-9d87-9e8d0cbe38fb"/>
+				<text><![CDATA[Ruc: 20131370301]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="0" width="40" height="20" uuid="aa0dab6a-1c16-49ce-b9b2-8f839e2b49b7"/>
+				<box rightPadding="4"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="20" width="70" height="20" uuid="6588636a-9985-4525-90e4-e8cf87299278"/>
+				<box rightPadding="4"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[Pagina Web:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="20" width="115" height="20" forecolor="#1A2FED" uuid="ed3721e6-5ded-47ec-ac63-c141114576dd"/>
+				<text><![CDATA[http://www.mpfn.gob.pe]]></text>
+			</staticText>
+			<image hAlign="Center">
+				<reportElement x="0" y="0" width="65" height="60" uuid="2687857d-9978-4485-8a52-9e2df9964ea1"/>
+				<imageExpression><![CDATA["classpath:ministerio.jpg"]]></imageExpression>
+			</image>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="420" y="0" width="100" height="20" uuid="8721f907-2335-451c-9daf-12e78b966897"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="39">
+			<staticText>
+				<reportElement x="142" y="0" width="270" height="30" uuid="9117687f-4a6a-405d-9478-1e80ef58869b"/>
+				<textElement>
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[Listado De Requerimiento]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="80" y="0" width="100" height="22" uuid="6b57cf21-bc8c-48b9-b1ef-ae5700e47f35">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="31fee8ce-2051-4d67-86eb-631c28de5e36"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<topPen lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="0" width="100" height="22" uuid="eaf5e12c-9e39-454a-935d-b59d80164dc6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5045de41-d4e2-4aaf-b456-c00841993d74"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<topPen lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="0" width="100" height="22" uuid="10db0cea-effb-44d5-a226-3476daa2c597">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="752c969b-f9be-4236-9726-2a0270c0e1e2"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<topPen lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Descripcion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="0" width="100" height="22" uuid="f2a258f3-2216-477a-a7fb-d306dff83292">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5231f18d-fb7a-4006-93f3-89f8af4336ce"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<topPen lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Usuario]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="80" y="0" width="100" height="30" uuid="df4c3d84-700e-4d34-894e-f3862b381def">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="31fee8ce-2051-4d67-86eb-631c28de5e36"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<topPen lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{idrequerimiento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="0" width="100" height="30" uuid="ead80e20-7eb1-4754-b04a-c5510619c60c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5045de41-d4e2-4aaf-b456-c00841993d74"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<topPen lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{nomrequerimiento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="0" width="100" height="30" uuid="d0a3470c-d5c9-48b0-bfdd-233d62bee315">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="752c969b-f9be-4236-9726-2a0270c0e1e2"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<topPen lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="0" width="100" height="30" uuid="a7ebe1d7-b33d-4289-b82f-a543004ebb18">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5231f18d-fb7a-4006-93f3-89f8af4336ce"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<topPen lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{usu.nombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="-11" y="10" width="556" height="30" backcolor="#E6E8E9" uuid="6393037b-e776-4581-9d5b-3d5de9b85956"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="13" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[(©) 2023 - 2023 - Ministerio Publico]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
